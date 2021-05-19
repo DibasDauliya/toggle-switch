@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+      }
+
+      h1,
+      h2 {
+        opacity: 0.8;
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+      }
+
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: '';
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        top: 4px;
+        background-color: white;
+        transition: 0.4s;
+      }
+
+      input[type='checkbox']:checked + .slider {
+        background-color: #2196f3;
+      }
+      input[type='checkbox']:focus + .slider {
+        box-shadow: 0 0 1px #2196f3;
+      }
+
+      input[type='checkbox']:checked + .slider::before {
+        transform: translateX(26px);
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        position: relative;
+      }
+
+      /* separator */
+      .bar {
+        opacity: 0.5;
+        font-size: 1.5rem;
+        position: absolute;
+        bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Toggle Switch</h1>
+    <main>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <span class="bar">|</span>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </main>
+    <footer>
+      <p>
+        Inspired by
+        <a
+          href="https://www.w3schools.com/howto/howto_css_switch.asp"
+          rel="noopener noreferrer"
+          target="_blank"
+          >W3Schools</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
